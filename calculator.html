@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 5px;
+            background-color:burlywood ;
+        }
+        .main{
+           height: 360px;
+           width: 220px;
+           border:solid black;
+        }
+        .btn{
+            background-color: cornflowerblue;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text" id="res">
+    <div class="btn">
+        <input type="button" value="c" onclick="Clear()">
+        <input type="button" value="%" onclick="solve('%')">
+        <input type="button" value="&#129056" onclick="Back('-')">
+        <input type="button" value="/" onclick="solve('solve')">
+        <br>
+        <input type="button" value="7" onclick="solve('7')">
+        <input type="button" value="8" onclick="solve('8')">
+        <input type="button" value="9" onclick="solve('9')">
+        <input type="button" value="*" onclick="solve('*')">
+        <br>
+        <input type="button" value="4" onclick="solve('4')">
+        <input type="button" value="5" onclick="solve('5')">
+        <input type="button" value="6" onclick="solve('6')">
+        <input type="button" value="-" onclick="solve('-')">
+        <br>
+        <input type="button" value="1" onclick="solve('1')">
+        <input type="button" value="2" onclick="solve('2')">
+        <input type="button" value="3" onclick="solve('3')">
+        <input type="button" value="+" onclick="solve('+')">
+        <br>
+        <input type="button" value="00" onclick="solve('00')">
+        <input type="button" value="0" onclick="solve('0')">
+        <input type="button" value="." onclick="solve('.')">
+        <input type="button" value="=" onclick="solve('=')">
+    </div>
+    </div>
+    <script>
+        //to display values
+        function solve(val){
+            let v = document.getElementById('res').value += val
+        }
+        function Result(){
+            let exp1 = document.getElementById('res').value
+            let num = eval(exp1)
+            document.getElementById('res').value = num
+        }
+        function Back(){
+            let ev = document.getElementById('res').value
+            ev1 = ev.slice(0,-1)
+            document.getElementById('res').value = ev1
+        }
+        function Clear(){
+            document.getElementById('res').value = ''
+
+        }
+    </script>
+
+</body>
+</html>
